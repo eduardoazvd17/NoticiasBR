@@ -52,11 +52,12 @@ public class Noticia {
     }
 
     public Noticia(String urlImagem, String titulo, String descricao, String autor, String data, String urlNoticia) {
+        String dt = data.charAt(9) + data.charAt(10) + "/" + data.charAt(6) + data.charAt(7) + "/" + data.charAt(1) + data.charAt(2) + data.charAt(3) + data.charAt(4);
         this.urlImagem = urlImagem;
         this.titulo = titulo;
         this.descricao = descricao;
         this.autor = autor;
-        this.data = data;
+        this.data = dt;
         this.urlNoticia = urlNoticia;
     }
 }
