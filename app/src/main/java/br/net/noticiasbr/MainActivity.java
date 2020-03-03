@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void buscarNoticias(){
         try {
-            URL url = new URL("https://newsapi.org/v2/top-headlines?sources=google-news-br&apiKey=89cc90fca9254f59906bea7f40a26fe7");
+            URL url = new URL("https://newsapi.org/v2/top-headlines?country=br&apiKey=89cc90fca9254f59906bea7f40a26fe7");
             HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
             conexao.setRequestMethod("GET");
             conexao.connect();
