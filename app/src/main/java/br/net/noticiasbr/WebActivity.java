@@ -25,6 +25,7 @@ public class WebActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         String url = getIntent().getExtras().getString("url");
         TextView tituloPagina = findViewById(R.id.tituloWeb);
