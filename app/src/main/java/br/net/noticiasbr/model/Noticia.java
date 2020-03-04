@@ -52,8 +52,6 @@ public class Noticia {
     }
 
     public Noticia(String urlImagem, String titulo, String descricao, String autor, String data, String urlNoticia) {
-        //2020-03-04T00:13:48Z
-        //0123456789
         String dt = data.charAt(8) + data.charAt(9) + "/" + data.charAt(5) + data.charAt(6) + "/" + data.charAt(0) + data.charAt(1) + data.charAt(2) + data.charAt(3);
         this.urlImagem = urlImagem;
         this.titulo = titulo;
