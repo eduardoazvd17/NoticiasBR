@@ -7,6 +7,5 @@
         <item name="colorAccent">#900</item>
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
-        <item name="android:navigationBarColor">#000</item>
     </style>
 </resources>
