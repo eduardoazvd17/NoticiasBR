@@ -1,5 +1,8 @@
 package br.net.noticiasbr.model;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Noticia {
     private String urlImagem, titulo, descricao, autor, data, urlNoticia;
 
@@ -52,12 +55,21 @@ public class Noticia {
     }
 
     public Noticia(String urlImagem, String titulo, String descricao, String autor, String data, String urlNoticia) {
-        String dt = data.charAt(8) + data.charAt(9) + "/" + data.charAt(5) + data.charAt(6) + "/" + data.charAt(0) + data.charAt(1) + data.charAt(2) + data.charAt(3);
         this.urlImagem = urlImagem;
         this.titulo = titulo;
         this.descricao = descricao;
         this.autor = autor;
-        this.data = dt;
+        this.data = formatarData(data);
         this.urlNoticia = urlNoticia;
+    }
+
+    private String formatarData(String dt) {
+        // 2020-03-04T09:31:00Z
+        String[] dataParticionada = dt.split("T");
+        // 2020-03-04
+        String[] dataParticionada2 = dataParticionada[0].split("-");
+        // 04/03/2020
+        String data = dataParticionada2[2] + "/" + dataParticionada2[1] + "/" + dataParticionada2[0];
+        return data;
     }
 }

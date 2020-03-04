@@ -22,12 +22,12 @@ public class NoticiasAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return noticias.size();
+        return this.noticias.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return noticias.get(position);
+        return this.noticias.get(position);
     }
 
     @Override
@@ -48,8 +48,8 @@ public class NoticiasAdapter extends BaseAdapter {
 
         Picasso.with(view.getContext()).load(noticia.getUrlImagem()).into(img);
         titulo.setText(noticia.getTitulo());
-        descricao.setText(noticia.getDescricao()+"...");
-        autor.setText("Publicado por: " + noticia.getAutor() + " em " + noticia.getData());
+        descricao.setText(noticia.getDescricao());
+        autor.setText("Fonte: " + noticia.getAutor() + " em " + noticia.getData());
 
         return view;
     }

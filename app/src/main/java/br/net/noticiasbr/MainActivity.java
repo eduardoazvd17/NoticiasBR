@@ -89,18 +89,18 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getBaseContext(), "Aparentemente o sistema está fora do ar. Tente novamente dentro de alguns instantes.", Toast.LENGTH_LONG).show();
         }
     }
-
     private void processarDados(String jsonString) throws JSONException {
         noticias.clear();
         JSONObject dados = new JSONObject(jsonString);
         JSONArray artigos = (JSONArray) dados.get("articles");
         for (int i=0; i < artigos.length(); i++) {
             JSONObject artigo = (JSONObject) artigos.get(i);
+            JSONObject source = (JSONObject) artigo.get("source");
             Noticia noticia = new Noticia(
                     artigo.getString("urlToImage"),
                     artigo.getString("title"),
                     artigo.getString("description"),
-                    artigo.getString("author"),
+                    source.getString("name"),
                     artigo.getString("publishedAt"),
                     artigo.getString("url")
             );
